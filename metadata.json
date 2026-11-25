@@ -1,0 +1,6 @@
+{
+  "name": "MediCare – Hospital Appointment & Patient Management System",
+  "description": "A frontend hospital administration dashboard for managing doctors, patients, appointments, medical records, and consultation billing with localStorage persistence and Java OOP-aligned domain modeling.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

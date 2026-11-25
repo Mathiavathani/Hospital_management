@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MediCare – Report Screenshots Download Gallery</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, -apple-system, sans-serif;
+        background: #f4f6f9;
+        color: #0f2544;
+        padding: 32px 20px 64px;
+      }
+      .wrap {
+        max-width: 1120px;
+        margin: 0 auto;
+      }
+      header {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        margin-bottom: 28px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid #cbd5e1;
+      }
+      h1 {
+        margin: 0;
+        font-size: 24px;
+      }
+      p.sub {
+        margin: 4px 0 0;
+        font-size: 14px;
+        color: #475569;
+      }
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(460px, 1fr));
+        gap: 24px;
+      }
+      .card {
+        background: #ffffff;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        overflow: hidden;
+      }
+      .card img {
+        width: 100%;
+        display: block;
+        border-bottom: 1px solid #e2e8f0;
+        background: #f8fafc;
+      }
+      .meta {
+        padding: 14px 16px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+      }
+      .meta h2 {
+        margin: 0;
+        font-size: 15px;
+      }
+      .meta p {
+        margin: 3px 0 0;
+        font-size: 12px;
+        color: #64748b;
+      }
+      .btn {
+        text-decoration: none;
+        background: #0f2544;
+        color: #ffffff;
+        padding: 8px 14px;
+        border-radius: 8px;
+        font-size: 13px;
+        font-weight: 600;
+        white-space: nowrap;
+      }
+      .btn:hover {
+        background: #1d3e6e;
+      }
+      @media (max-width: 540px) {
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <div>
+          <h1>MediCare – Project Report Screenshots (12 Figures)</h1>
+          <p class="sub">Click Download PNG on any screen below to insert directly into your college project report.</p>
+        </div>
+        <a class="btn" href="/">Back to MediCare App</a>
+      </header>
+      <div class="grid" id="gallery"></div>
+    </div>
+    <script>
+      const items = [
+        ['01_login_page.png', 'Figure 1: Admin Login Page', 'Split-screen login with validation & demo credentials'],
+        ['02_dashboard.png', 'Figure 2: Dashboard Overview', 'Live KPI cards, status chart, doctor availability & recent patients'],
+        ['03_doctor_management_table.png', 'Figure 3: Doctor Management (Table)', 'Auto-generated IDs, categories, fees & availability toggles'],
+        ['04_doctor_management_cards.png', 'Figure 4: Doctor Management (Cards)', 'Physician profile cards across all 5 doctor categories'],
+        ['05_patient_management.png', 'Figure 5: Patient Management', 'Registered patients with blood groups & history summaries'],
+        ['06_patient_profile_modal.png', 'Figure 6: Patient Profile Modal', 'Tabbed view with personal details, visits & medical records'],
+        ['07_appointment_management_table.png', 'Figure 7: Appointment Management (Table)', 'Multi-filter scheduling table with status & billing actions'],
+        ['08_appointment_management_calendar.png', 'Figure 8: Appointment Management (Calendar)', 'Interactive monthly calendar with daily agenda panel'],
+        ['09_book_appointment_modal.png', 'Figure 9: Book Appointment Modal', 'Auto specialization & fee preview with conflict validation'],
+        ['10_medical_records.png', 'Figure 10: Medical Records', 'Patient-linked diagnosis, treatment & prescription archive'],
+        ['11_consultation_fees_and_bill.png', 'Figure 11: Consultation Fees & Printable Bill', 'Editable category rates + formal printable consultation bill'],
+        ['12_settings_and_java_oop.png', 'Figure 12: Settings & Java OOP Blueprint', 'Hospital details, localStorage management & OOP class mapping'],
+      ];
+      const root = document.getElementById('gallery');
+      items.forEach(([file, title, desc]) => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <a href="${file}" target="_blank" rel="noopener">
+            <img src="${file}" alt="${title}" loading="lazy" />
+          </a>
+          <div class="meta">
+            <div>
+              <h2>${title}</h2>
+              <p>${desc}</p>
+            </div>
+            <a class="btn" href="${file}" download="${file}">Download PNG</a>
+          </div>
+        `;
+        root.appendChild(card);
+      });
+    </script>
+  </body>
+</html>
